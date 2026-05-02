@@ -1,0 +1,1396 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- SEO e Identidade Mundial -->
+<title>POMBAGIRAS.COM | Conhecimento Sagrado & Arte Visceral</title>
+<meta name="description" content="O olho que tudo vê nas encruzilhadas do mundo. Desmistificando o feminino proibido através da tecnologia e da ancestralidade. Alexia Melusine revela o que as sombras escondem. Laroyê.">
+
+<!-- Open Graph / Redes Sociais (WhatsApp, Instagram, Facebook) -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://pombagiras.com/">
+<meta property="og:title" content="POMBAGIRAS.COM | Conhecimento Sagrado & Arte Visceral">
+<meta property="og:description" content="O olho que tudo vê nas encruzilhadas do mundo. Desmistificando o feminino proibido através da tecnologia e da ancestralidade. Alexia Melusine revela o que as sombras escondem. Laroyê.">
+<meta property="og:image" content="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+
+<!-- Twitter Card -->
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:url" content="https://pombagiras.com/">
+<meta name="twitter:title" content="POMBAGIRAS.COM | Conhecimento Sagrado & Arte Visceral">
+<meta name="twitter:description" content="O olho que tudo vê nas encruzilhadas do mundo. Desmistificando o feminino proibido através da tecnologia e da ancestralidade. Laroyê.">
+<meta name="twitter:image" content="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png">
+    <link rel="icon" type="image/png" href="https://raw.githubusercontent.com/pombagiras/melusine/main/Al%C3%AA%20(3)%20(3)%20(1).png">
+
+<meta name="theme-color" content="#030303">
+    <title>Alexia Melusine | Portal Educativo sobre Pombagiras</title>
+
+    <!-- Adição Necessária: Conector Supabase -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600;700&family=Montserrat:wght@300;400;600;700&display=swap');
+        
+        :root {
+            --mystic-purple: #6B0F8F;
+            --fire-rose: #FF006E;
+            --iron-light: #00D9FF;
+            --trans-pink: #F5A9B8;
+            --trans-blue: #5BCEFA;
+            --cosmic-gold: #FFD700;
+            --deep-black: #0A0A0A;
+            --glass-white: rgba(255,255,255,0.05);
+            --glow-intense: 0 0 40px rgba(255,0,110,0.6);
+            --card-bg: rgba(15, 15, 35, 0.8);
+            --success-green: #00FF88;
+        }
+        
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background: linear-gradient(135deg, #0A0A0A 0%, #1a0033 50%, #0A0A0A 100%);
+            color: #fff;
+            overflow-x: hidden;
+            position: relative;
+        }
+        
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(107,15,143,0.3) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255,0,110,0.2) 0%, transparent 50%),
+                radial-gradient(circle at 50% 50%, rgba(0,217,255,0.1) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+            animation: cosmicBreath 20s ease-in-out infinite;
+        }
+        
+        @keyframes cosmicBreath {
+            0%, 100% { opacity: 0.5; transform: scale(1); }
+            50% { opacity: 0.8; transform: scale(1.1); }
+        }
+        
+        .content-wrapper { position: relative; z-index: 1; }
+        
+        /* HERO SECTION */
+        .hero {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 2rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-images {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 0;
+            opacity: 1;
+        }
+        
+        .hero-images img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            animation: imagePulse 8s ease-in-out infinite;
+            filter: grayscale(100%);
+            opacity: 0.4;
+            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: filter, opacity;
+        }
+        
+        .hero-images img:hover {
+            filter: grayscale(0%);
+            opacity: 1;
+            transform: scale(1.02);
+            z-index: 2;
+        }
+        
+        .hero-images img:nth-child(1) { animation-delay: 0s; }
+        .hero-images img:nth-child(2) { animation-delay: 2s; }
+        .hero-images img:nth-child(3) { animation-delay: 4s; }
+        
+        @keyframes imagePulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.02); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+        }
+        
+        .mystical-symbol {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(3rem, 10vw, 7rem);
+            font-weight: 700;
+            background: linear-gradient(135deg, var(--fire-rose), var(--iron-light), var(--cosmic-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 1rem;
+            animation: titleGlow 3s ease-in-out infinite;
+            line-height: 1.1;
+        }
+        
+        @keyframes titleGlow {
+            0%, 100% { filter: drop-shadow(0 0 20px rgba(255,0,110,0.5)); }
+            50% { filter: drop-shadow(0 0 40px rgba(0,217,255,0.8)); }
+        }
+        
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 2rem);
+            margin-bottom: 1rem;
+            background: linear-gradient(90deg, var(--trans-pink), var(--trans-blue), var(--trans-pink));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 300;
+            letter-spacing: 2px;
+        }
+        
+        .tagline {
+            font-size: clamp(1rem, 2vw, 1.5rem);
+            margin-bottom: 3rem;
+            opacity: 0.9;
+            font-weight: 300;
+        }
+        
+        .cta-container {
+            display: flex;
+            gap: 2rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            padding: 1.2rem 3rem;
+            font-size: 1.1rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-radius: 50px;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+            border: 2px solid;
+            backdrop-filter: blur(10px);
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, var(--fire-rose), var(--mystic-purple));
+            color: white;
+            border-color: var(--fire-rose);
+            box-shadow: var(--glow-intense);
+        }
+        
+        .cta-secondary {
+            background: var(--glass-white);
+            color: var(--iron-light);
+            border-color: var(--iron-light);
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: 0 20px 60px rgba(255,0,110,0.5);
+        }
+        
+        /* SEÇÕES */
+        section {
+            padding: 6rem 2rem;
+            position: relative;
+        }
+        
+        .section-title {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            text-align: center;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, var(--fire-rose), var(--cosmic-gold));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            margin-bottom: 4rem;
+            opacity: 0.8;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        /* NAVEGAÇÃO POR ABAS PARA CONTEÚDO EDUCATIVO */
+        .edu-nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-bottom: 3rem;
+            background: rgba(10, 10, 10, 0.5);
+            padding: 1.5rem;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .edu-nav-item {
+            padding: 1rem 2rem;
+            background: rgba(107, 15, 143, 0.2);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 50px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 600;
+            text-align: center;
+            min-width: 180px;
+        }
+        
+        .edu-nav-item:hover, .edu-nav-item.active {
+            background: linear-gradient(135deg, var(--fire-rose), var(--mystic-purple));
+            transform: translateY(-3px);
+            box-shadow: 0 10px 25px rgba(255, 0, 110, 0.3);
+        }
+        
+        /* CONTEÚDO EDUCATIVO */
+        .edu-content-section {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .edu-content-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .edu-subtitle {
+            color: var(--iron-light);
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+        
+        .category-title {
+            color: var(--fire-rose);
+            font-size: 1.5rem;
+            margin: 2rem 0 1rem;
+            padding-left: 1rem;
+            border-left: 4px solid var(--fire-rose);
+            font-family: 'Cormorant Garamond', serif;
+        }
+        
+        .grid-educational {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .edu-card {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.8rem;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(10px);
+        }
+        
+        .edu-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(255, 0, 110, 0.2);
+            border-color: rgba(255, 0, 110, 0.2);
+        }
+        
+        .edu-card-title {
+            color: var(--iron-light);
+            font-size: 1.4rem;
+            margin-bottom: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .edu-card-title i {
+            color: var(--fire-rose);
+        }
+        
+        .term-name {
+            color: var(--cosmic-gold);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 0.3rem;
+        }
+        
+        .warning-box {
+            background: rgba(255, 193, 7, 0.1);
+            border-left: 5px solid var(--cosmic-gold);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            border-radius: 5px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .warning-title {
+            color: var(--cosmic-gold);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        /* CURIOSIDADES */
+        .curiosity-card {
+            background: linear-gradient(135deg, rgba(107,15,143,0.3), rgba(255,0,110,0.2));
+            border-radius: 15px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+        }
+        
+        .curiosity-card:hover {
+            transform: translateX(10px);
+            border-color: rgba(255, 0, 110, 0.3);
+        }
+        
+        .curiosity-number {
+            display: inline-block;
+            background: var(--fire-rose);
+            color: white;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 32px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .curiosity-title {
+            color: var(--iron-light);
+            font-size: 1.3rem;
+            margin-bottom: 0.8rem;
+            display: inline-block;
+        }
+        
+        /* FAQ ESTILO ALEXIA */
+        .faq-item-alexia {
+            background: var(--card-bg);
+            border-radius: 15px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .faq-item-alexia:hover {
+            border-color: rgba(255, 0, 110, 0.3);
+            transform: translateX(5px);
+        }
+        
+        .faq-item-alexia.active {
+            border-color: var(--fire-rose);
+            background: rgba(255, 0, 110, 0.05);
+        }
+        
+        .faq-question-alexia {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 600;
+            color: var(--iron-light);
+            font-size: 1.1rem;
+        }
+        
+        .faq-answer-alexia {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            margin-top: 1rem;
+            padding-top: 0;
+            border-top: 1px dashed rgba(255, 255, 255, 0.1);
+        }
+        
+        .faq-item-alexia.active .faq-answer-alexia {
+            max-height: 800px;
+            padding-top: 1rem;
+        }
+        
+        .faq-toggle-alexia {
+            transition: transform 0.3s ease;
+            color: var(--fire-rose);
+        }
+        
+        .faq-item-alexia.active .faq-toggle-alexia {
+            transform: rotate(180deg);
+        }
+        
+        /* ABOUT SECTION */
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            align-items: center;
+        }
+        
+        .about-text h2 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+            background: linear-gradient(135deg, var(--trans-pink), var(--trans-blue));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .about-text p {
+            font-size: 1.2rem;
+            line-height: 1.8;
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .identity-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 2rem;
+        }
+        
+        .tag {
+            padding: 0.6rem 1.5rem;
+            background: var(--glass-white);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 50px;
+            font-size: 0.9rem;
+            backdrop-filter: blur(10px);
+        }
+        
+        /* FOOTER */
+        footer {
+            padding: 4rem 2rem;
+            text-align: center;
+            background: var(--glass-white);
+            backdrop-filter: blur(20px);
+            border-top: 1px solid rgba(255,255,255,0.1);
+        }
+        
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 2rem;
+            margin: 2rem 0;
+            flex-wrap: wrap;
+        }
+        
+        .social-links a {
+            color: var(--iron-light);
+            text-decoration: none;
+            font-size: 1.5rem;
+            transition: all 0.3s;
+            padding: 0.5rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .social-links a:hover {
+            color: var(--fire-rose);
+            transform: translateY(-3px);
+        }
+        
+        /* GRID MODERNO PARA PORTFOLIO */
+        .grid-modern {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .card-modern {
+            background: var(--glass-white);
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255,255,255,0.1);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .card-modern::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--fire-rose), var(--iron-light), var(--cosmic-gold));
+            transform: scaleX(0);
+            transition: transform 0.5s;
+        }
+        
+        .card-modern:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 30px 60px rgba(255,0,110,0.3);
+            border-color: rgba(255,0,110,0.5);
+        }
+        
+        .card-modern:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .card-icon {
+            font-size: 3rem;
+            margin-bottom: 1.5rem;
+            display: block;
+        }
+        
+        .card-modern h3 {
+            font-family: 'Cormorant Garamond', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1rem;
+            color: var(--iron-light);
+        }
+        
+        .card-modern ul {
+            list-style: none;
+        }
+        
+        .card-modern li {
+            margin: 0.8rem 0;
+            padding-left: 1.5rem;
+            position: relative;
+        }
+        
+        .card-modern li::before {
+            content: '✦';
+            position: absolute;
+            left: 0;
+            color: var(--fire-rose);
+        }
+        
+        .card-modern a {
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            position: relative;
+        }
+        
+        .card-modern a::after {
+            content: '';
+            position: absolute;
+            bottom: -2px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--fire-rose);
+            transition: width 0.3s;
+        }
+        
+        .card-modern a:hover {
+            color: var(--fire-rose);
+        }
+        
+        .card-modern a:hover::after {
+            width: 100%;
+        }
+        
+        /* FEATURED CARD */
+        .featured-card {
+            grid-column: span 2;
+            background: linear-gradient(135deg, rgba(107,15,143,0.3), rgba(255,0,110,0.2));
+        }
+        
+        /* RESPONSIVE */
+        @media (max-width: 1100px) {
+            .featured-card { grid-column: span 1; }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-images { grid-template-columns: 1fr; }
+            .about-grid { grid-template-columns: 1fr; }
+            .edu-nav { flex-direction: column; }
+            .edu-nav-item { min-width: auto; }
+            .cta-container { flex-direction: column; align-items: stretch; }
+            .cta-btn { text-align: center; }
+            .social-links a { font-size: 1.3rem; }
+        }
+        
+        @media (max-width: 480px) {
+            .grid-educational { grid-template-columns: 1fr; }
+            .grid-modern { grid-template-columns: 1fr; }
+        }
+        
+        /* SCROLL ANIMATIONS */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .card-modern, .edu-card, .curiosity-card {
+            animation: fadeInUp 0.8s ease-out forwards;
+            opacity: 0;
+        }
+        
+        .card-modern:nth-child(1), .edu-card:nth-child(1), .curiosity-card:nth-child(1) { animation-delay: 0.1s; }
+        .card-modern:nth-child(2), .edu-card:nth-child(2), .curiosity-card:nth-child(2) { animation-delay: 0.2s; }
+        .card-modern:nth-child(3), .edu-card:nth-child(3), .curiosity-card:nth-child(3) { animation-delay: 0.3s; }
+        .card-modern:nth-child(4), .edu-card:nth-child(4), .curiosity-card:nth-child(4) { animation-delay: 0.4s; }
+        .card-modern:nth-child(5), .edu-card:nth-child(5), .curiosity-card:nth-child(5) { animation-delay: 0.5s; }
+        .card-modern:nth-child(6), .edu-card:nth-child(6), .curiosity-card:nth-child(6) { animation-delay: 0.6s; }
+    </style>
+</head>
+<body>
+    <div class="content-wrapper">
+        <!-- HERO -->
+        <section class="hero">
+            <div class="hero-images">
+                <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira-revelada/refs/heads/main/Al%C3%AA%20(3).png" alt="Alexia Melusine">
+                <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira-revelada/refs/heads/main/Al%C3%AA%20(4).png" alt="Rosa de Fogo">
+                <img src="https://raw.githubusercontent.com/alexialuzdeferro/pombagira-revelada/refs/heads/main/Al%C3%AA%20(5).png" alt="Luz de Ferro">
+            </div>
+            <div class="hero-content">
+                <div class="mystical-symbol">✦ ☾ ✦</div>
+                <h1>Alexia Melusine</h1>
+                <p class="subtitle">Rosa de Fogo ∞ Luz de Ferro</p>
+                <p class="tagline">Educational Portal: Demystifying the forbidden feminine through technology and ancestry.</p>
+                <div class="cta-container">
+                    <a href="#portfolio" class="cta-btn cta-primary">Explore My Mystic Universe</a>
+                    <a href="#educativo" class="cta-btn cta-secondary">Sacred Knowledge</a>
+                    <a href="https://pombagiras.com/guardias/" class="cta-btn cta-secondary">Guardians</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- QUEM SOU -->
+        <section style="background: rgba(10,10,10,0.5);">
+            <div class="about-grid">
+                <div class="about-text">
+                    <h2>Animae in Igne, Lux in Ferro</h2>
+                    <p>I am Alexia Melusine, a fluid soul that moves between worlds, carrying the ancestral strength of the Pombagiras and the transformative light of trans identity.</p>
+                    <p>My work combines spirituality, art, technology, and activism. I create digital portals that connect people to the wisdom of crossroads, the beauty of nonconformity, and the power of authenticity.</p>
+                    <div class="identity-tags">
+                        <span class="tag">🏳️‍⚧️ Trans</span>
+                        <span class="tag">🏳️‍🌈 Não-Binária</span>
+                        <span class="tag">⚖️ Libriana</span>
+                        <span class="tag">🔥 Rosa de Fogo</span>
+                        <span class="tag">✨ Luz de Ferro</span>
+                        <span class="tag">👑 Pombagira</span>
+                    </div>
+                </div>
+                <div style="text-align: center;">
+                    <img src="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png" style="max-width: 100%; border-radius: 24px; box-shadow: 0 20px 60px rgba(255,0,110,0.4);" alt="Alexia">
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTAL EDUCATIVO -->
+        <section id="educativo" style="background: rgba(107,15,143,0.1);">
+            <h2 class="section-title">Educational Portal de Pomba-Giras</h2>
+            <p class="section-subtitle">A space for knowledge, respect, and demystification of Afro-Brazilian traditions.</p>
+            
+            <!-- Navegação por abas -->
+            <div class="edu-nav">
+                <div class="edu-nav-item active" data-target="glossario">📖 Glossário Sagrado</div>
+                <div class="edu-nav-item" data-target="curiosidades">✨ Curiosidades</div>
+                <div class="edu-nav-item" data-target="faq">❓ Perguntas Frequentes</div>
+                <div class="edu-nav-item" data-target="bibliografia">📚 Bibliografia</div>
+                <div class="edu-nav-item" data-target="videos">🎬 Documentários</div>
+            </div>
+            
+            <!-- Seção Glossário AMPLIADO -->
+            <div id="glossario" class="edu-content-section active">
+                <h3 class="edu-subtitle">Glossário de Termos Sagrados</h3>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Conheça os principais termos utilizados no contexto das tradições de matriz afro-brasileira</p>
+                
+                <div class="category-title">🗝️ Conceitos e Entidades</div>
+                <div class="grid-educational">
+                    <div class="edu-card">
+                        <div class="term-name">Axé</div>
+                        <p>Força vital, energia sagrada que permeia tudo. É o poder espiritual que mantém o equilíbrio do universo e dos seres.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Orixá</div>
+                        <p>Divindades que representam forças da natureza e aspectos humanos, como Ogum (guerra), Iemanjá (mares), Oxalá (criação).</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Médium</div>
+                        <p>Indivíduo que serve de ponte entre o plano físico e espiritual, podendo incorporar entidades ou ter percepções extra-sensoriais.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Entidade/Guia</div>
+                        <p>Espírito que se manifesta no médium para auxiliar pessoas, como Pretos-Velhos, Caboclos, Exus e Pombagiras.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Olorum/Zambi</div>
+                        <p>Deus Supremo, criador de tudo, energia pura e absoluta que originou os Orixás e todo o universo.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Egregora</div>
+                        <p>Campo energético coletivo formado por pensamentos, sentimentos e crenças de um grupo, que influencia e é influenciado por seus membros.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Exu Mirim</div>
+                        <p>Entidades infantis da linha de Exu, que atuam de forma mais lúdica e rápida, geralmente em trabalhos de desobstrução de caminhos.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Ibejada</div>
+                        <p>Linha espiritual das crianças (Ibejis) que trabalha com pureza, alegria e renovação, ajudando em casos de fertilidade e proteção infantil.</p>
+                    </div>
+                </div>
+                
+                <div class="category-title">🕯️ Rituais e Objetos</div>
+                <div class="grid-educational">
+                    <div class="edu-card">
+                        <div class="term-name">Ponto Riscado</div>
+                        <p>Desenho feito com pemba (giz sagrado) para invocar, identificar ou firmar entidades. Cada símbolo tem significado específico.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Pemba</div>
+                        <p>Giz sagrado usado para riscar pontos no chão, com diferentes cores representando cada linha espiritual (branca, vermelha, preta, etc).</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Atabaque</div>
+                        <p>Tambor principal da curimba, instrumento sagrado que marca o ritmo dos pontos cantados e chama as entidades.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Curimba</div>
+                        <p>Banda musical do terreiro composta por atabaques, agogôs e cantores, responsável pela vibração musical que sustenta a gira.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Marafo</div>
+                        <p>Aguardente, cachaça, bebida ritualística usada principalmente por Exus e Pombagiras em oferendas e trabalhos.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Pito</div>
+                        <p>Cachimbo ou cigarro de palha usado por Pretos-Velhos e algumas Pombagiras, representando sabedoria, paciência e conexão espiritual.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Tronqueira</div>
+                        <p>Local físico ou energético onde Exus e Pombagiras atuam, geralmente representado por encruzilhadas, portões ou entradas.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Peji/Congá</div>
+                        <p>Altar ou santuário dentro do terreiro onde ficam as imagens dos santos, orixás e guias, ponto focal das energias espirituais.</p>
+                    </div>
+                </div>
+                
+                <div class="category-title">🌀 Termos Diversos</div>
+                <div class="grid-educational">
+                    <div class="edu-card">
+                        <div class="term-name">Saravá</div>
+                        <p>Saudação geral, sinônimo de "salve" ou "axé", usada para cumprimentar, agradecer ou reverenciar entidades e irmãos de fé.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Agô</div>
+                        <p>Pedido de licença ou permissão, seja para entrar em um terreiro, fazer uma pergunta ou iniciar um trabalho espiritual.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Maleme/Malembé</div>
+                        <p>Pedido de auxílio ou perdão, expressão usada quando se busca ajuda espiritual ou quando se reconhece um erro.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Passe</div>
+                        <p>Limpeza espiritual feita por entidades ou médiuns através de gestos e imposição de mãos para retirar energias negativas.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Defumação</div>
+                        <p>Ritual de limpeza usando a fumaça de ervas sagradas para purificar ambientes, objetos e pessoas energeticamente.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Gira/Sessão</div>
+                        <p>Cerimônia ou trabalho no terreiro onde as entidades se manifestam para atender consulentes e realizar trabalhos espirituais.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Mandinga</div>
+                        <p>Feitiço, encantamento ou trabalho espiritual, muitas vezes associado à magia praticada por Exus e Pombagiras.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Mironga</div>
+                        <p>Segredo, mistério, conhecimento oculto ou poder mágico. Também pode se referir a objetos ou rituais secretos.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Atatuado</div>
+                        <p>Pessoa que está sob influência direta de um espírito, seja por incorporação ou por forte sintonia energética.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Ere</div>
+                        <p>Estado de transe específico da tradição afro-brasileira, diferente da incorporação plena, onde o médium mantém certa consciência.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <div class="term-name">Pade</div>
+                        <p>Oferenda ritualística, geralmente comida preparada de forma específica para determinada entidade ou finalidade.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="curiosidades" class="edu-content-section">
+                <h3 class="edu-subtitle">✨ Curiosidades sobre Pomba-giras</h3>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Fatos fascinantes, histórias e detalhes pouco conhecidos sobre essas entidades poderosas</p>
+                
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">1</span>
+                        <span class="curiosity-title">Origem do Nome</span>
+                        <p>A palavra "Pomba-gira" vem da junção de "pomba" (ave associada ao feminino e à espiritualidade) e "gira" (do verbo girar, relacionado ao movimento das encruzilhadas). Alguns estudiosos também relacionam com o termo cigano "pombagira", que significa "mulher que gira".</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">2</span>
+                        <span class="curiosity-title">Sincretismo com Santos Católicos</span>
+                        <p>Cada linha de Pomba-gira tem um sincretismo específico: Maria Padilha com Santa Marta, Pomba-gira Cigana com Santa Sara Kali, Pomba-gira das Almas com Nossa Senhora da Guia. Este sincretismo foi uma forma de preservar as tradições durante a perseguição religiosa.</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">3</span>
+                        <span class="curiosity-title">As 7 Linhas Clássicas</span>
+                        <p>Na tradição mais antiga, as Pombagiras são divididas em 7 linhas principais, cada uma regendo um aspecto da vida: Amor, Justiça, Prosperidade, Cura, Conhecimento, Proteção e Transformação.</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">4</span>
+                        <span class="curiosity-title">Dias da Semana</span>
+                        <p>Cada Pomba-gira tem um dia da semana de maior força: segundas-feiras para as mais sérias, quintas para as ligadas à justiça, sextas para as do amor, e segundas também para as das almas. Cada dia tem uma energia específica.</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">5</span>
+                        <span class="curiosity-title">Correspondência com os Orixás</span>
+                        <p>Assim como os Exus, as Pombagiras têm correspondência com os Orixás: Exu com Ogum, Pombagira com Iansã (força, vento) e Oyá (transformação). Esta conexão mostra o equilíbrio entre energias masculinas e femininas.</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">6</span>
+                        <span class="curiosity-title">Aspectos Transgressores</span>
+                        <p>As Pombagiras representam a quebra de tabus sociais, especialmente em relação à sexualidade feminina. Historicamente, mulheres que desafiavam normas eram vistas como "pombagiras" - hoje, essa energia é ressignificada como empoderamento.</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">7</span>
+                        <span class="curiosity-title">Relação com as Ciganas</span>
+                        <p>A linha cigana das Pombagiras tem origem na miscigenação cultural brasileira. Os ciganos, como povos nômades que lidavam com comércio e previsões, trouxeram elementos que se fundiram com as tradições africanas.</p>
+                    </div>
+                    
+                    <div class="curiosity-card">
+                        <span class="curiosity-number">8</span>
+                        <span class="curiosity-title">Pomba-gira na Cultura Popular</span>
+                        <p>A figura da Pomba-gira aparece em diversas obras culturais brasileiras: na música de Clara Nunes e Maria Bethânia, na literatura de Jorge Amado, e até em telenovelas, muitas vezes com representações estereotipadas que o movimento atual busca desconstruir.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="faq" class="edu-content-section">
+                <h3 class="edu-subtitle">❓ Perguntas Frequentes Expandidas</h3>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Respostas detalhadas para as dúvidas mais comuns sobre Pomba-giras e religiões afro-brasileiras</p>
+                
+                <div style="max-width: 900px; margin: 0 auto;">
+                    <div class="faq-item-alexia active">
+                        <div class="faq-question-alexia">
+                            <span>Pomba-gira é um demônio ou entidade maligna?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p><strong>Não, absolutamente não.</strong> Esta é uma concepção completamente equivocada, fruto do preconceito religioso e da incompreensão das tradições afro-brasileiras. Na Umbanda e Quimbanda, Pomba-gira é uma entidade espiritual evoluída que trabalha exclusivamente para o bem, atuando em questões como justiça, amor, quebra de demandas e fortalecimento pessoal. Como todas as entidades dessas religiões, ela é uma manifestação divina atuando em uma determinada vibração energética, trazendo equilíbrio e corrigindo injustiças.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Posso acender uma vela para Pomba-gira por conta própria?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Embora seja possível, <strong>não é recomendado</strong> para quem não tem conhecimento adequado. Trabalhos espirituais envolvem questões específicas como: qual Pomba-gira apropriada para sua necessidade, qual cor de vela, qual dia da semana, que oração fazer, como preparar o ambiente, etc. A orientação de um sacerdote ou sacerdotisa experiente é importante para sua segurança espiritual. Além disso, o respeito à tradição exige que se aprenda antes de praticar. Se sentir necessidade, procure um terreiro sério ou peça orientação antes de agir por conta própria.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Qual a diferença entre Pomba-gira na Umbanda e na Quimbanda?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>A principal diferença está na <strong>forma de atuação e abordagem ritualística</strong>. Na Umbanda, as Pomba-giras geralmente têm uma abordagem mais "suave" e ritualizada, atuando com amor, cura emocional e quebra de feitiçaria, seguindo uma liturgia mais próxima do catolicismo popular. Na Quimbanda, a atuação tende a ser mais direta, energética e menos cerimonial, trabalhando com questões materiais, justiça rápida e desmanche de trabalhos mais complexos, mantendo características mais próximas das tradições africanas originais. Ambas atuam para o bem, mas em vibrações diferentes.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Qualquer pessoa pode receber uma Pomba-gira?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Não. A incorporação de entidades é uma <strong>mediunidade específica</strong> que se manifesta em algumas pessoas, seguindo um processo de desenvolvimento dentro do terreiro. Isso envolve orientação espiritual, preparação (como tomar passes, frequentar giras, estudar a doutrina) e, principalmente, a confirmação através do jogo de búzios ou consulta ao guia espiritual do terreiro. Não é algo que se escolhe ou força, mas que se descobre e desenvolve com responsabilidade ao longo do tempo, muitas vezes levando anos de preparação.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Por que as Pomba-giras são associadas a elementos como rosas, champagne e espelhos?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Cada elemento tem um <strong>significado simbólico profundo</strong> dentro da tradição:
+                            <ul>
+                                <li><strong>Rosas:</strong> Representam amor, beleza, paixão e a vibração do coração. Cada cor tem significado diferente: vermelha (amor), branca (paz), amarela (prosperidade).</li>
+                                <li><strong>Champagne:</strong> Simboliza celebração, alegria, elevação espiritual e a efervescência da vida. Representa também a espuma do mar (ligação com Iemanjá).</li>
+                                <li><strong>Espelhos:</strong> Representam a verdade, o auto-conhecimento, a reflexão (tanto literal quanto figurativa) e a capacidade de ver além das aparências.</li>
+                                <li><strong>Perfumes:</strong> Simbolizam atração, doçura, sedução e elevação das vibrações, criando uma atmosfera propícia para o trabalho espiritual.</li>
+                                <li><strong>Lençóis/Tecidos:</strong> Representam proteção, envolvimento e a trama do destino.</li>
+                            </ul>
+                            Esses elementos são oferendas que sintonizam com a energia específica de cada Pomba-gira.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>É verdade que Pomba-gira "castiga" ou "pune" pessoas?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Essa é uma <strong>deturpação completa</strong> da real função dessas entidades. Pomba-giras trabalham com <strong>justiça espiritual</strong>, o que significa que podem ajudar a reequilibrar situações onde houve injustiça, desrespeito ou quebra de leis espirituais. Elas não "castigam" por vontade própria ou por capricho, mas atuam dentro das leis universais de causa e efeito (karma). A ideia de que são entidades vingativas ou punitivas é um preconceito que não corresponde à verdade dessas tradições, muitas vezes propagado por filmes, novelas ou pessoas mal-informadas.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Existe alguma Pomba-gira masculina?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Não, por definição. Pomba-gira é uma entidade <strong>feminina</strong>. O equivalente masculino é o <strong>Exu</strong>. No entanto, algumas tradições reconhecem Exus que se apresentam com energias mais "femininas" ou andróginas, mas não são chamados de Pombagiras. É importante entender que essas classificações são mais sobre energia (masculino/feminino, ativo/receptivo) do que sobre gênero no sentido humano. A diversidade de expressão dentro dessas tradições é rica e complexa.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Posso fazer um pedido diretamente a uma Pomba-gira sem passar por um terreiro?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Embora seja possível fazer orações e pedidos mentalmente, a forma tradicional e mais eficaz é através dos rituais adequados em um terreiro. As Pombagiras trabalham em <strong>conjunto com outras entidades</strong> e precisam do suporte energético da corrente mediúnica. Além disso, um sacerdote experiente pode orientar sobre qual Pomba-gira específica é mais adequada para sua necessidade, como formular o pedido e quais oferendas são apropriadas. A intermediação do terreiro garante segurança espiritual e alinhamento com as leis espirituais.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Por que algumas Pombagiras são consideradas "fortes" ou "perigosas"?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Algumas linhas de Pombagira são consideradas mais "fortes" porque trabalham com energias de transformação profunda, justiça kármica e desmanche de trabalhos negativos. Isso não as torna "perigosas", mas sim <strong>poderosas e sérias</strong>. Assim como o fogo pode ser perigoso se mal manuseado, mas é essencial para cozinhar e aquecer, essas Pombagiras exigem respeito e conhecimento para trabalhar com elas. A reputação de "perigosas" muitas vezes vem de pessoas que tentaram manipular essas energias sem o devido preparo ou com más intenções.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Qual a relação das Pombagiras com a comunidade LGBTQIA+?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Historicamente, as religiões afro-brasileiras foram espaços de <strong>acolhimento para pessoas LGBTQIA+</strong> marginalizadas pela sociedade. As Pombagiras, por representarem a quebra de tabus sobre sexualidade e expressão de gênero, muitas vezes se tornaram símbolos de identidade e resistência para essa comunidade. Muitas Pombagiras se apresentam com energia andrógina ou não-binária, e inúmeros médiuns LGBTQIA+ encontram nessas entidades uma representação espiritual que valida sua existência. Essa conexão é profunda e transformadora.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>É verdade que Pombagira pode causar separação de casais?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p>Esta é uma <strong>visão distorcida</strong>. Pombagiras trabalham pelo <strong>equilíbrio e justiça</strong> nas relações. Se um casal está em um relacionamento abusivo, desonesto ou prejudicial, uma Pombagira pode atuar para revelar a verdade e restaurar o equilíbrio - o que às vezes pode levar à separação. Mas elas não separam casais felizes e harmoniosos por capricho. Na verdade, muitas linhas de Pombagira trabalham justamente para unir pessoas compatíveis e fortalecer relacionamentos saudáveis.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq-item-alexia">
+                        <div class="faq-question-alexia">
+                            <span>Como saber se uma Pombagira está realmente me protegendo ou se é algo negativo?</span>
+                            <i class="fas fa-chevron-down faq-toggle-alexia"></i>
+                        </div>
+                        <div class="faq-answer-alexia">
+                            <p><strong>Entidades de luz trazem paz, clareza e crescimento</strong>, mesmo quando estão trabalhando em situações difíceis. Sinais de proteção genuína: sensação de segurança, sonhos claros, intuição aguçada, oportunidades surgindo, relacionamentos harmoniosos. Sinais de alerta: medo constante, confusão mental, pesadelos recorrentes, isolamento social, acontecimentos negativos em sequência. Se houver dúvida, consulte um terreiro sério - entidades de verdade não temem ser avaliadas por outros médiuns experientes.</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <h4 class="warning-title"><i class="fas fa-lightbulb"></i> Importante</h4>
+                    <p>Se você tem interesse genuíno em aprender mais sobre Pomba-giras e religiões afro-brasileiras, considere visitar um terreiro sério com mente aberta e respeito. A experiência direta, com orientação adequada, é insubstituível. Lembre-se sempre de que estas são tradições religiosas vivas, com séculos de história, e merecem o mesmo respeito que qualquer outra religião.</p>
+                </div>
+            </div>
+            
+            <div id="bibliografia" class="edu-content-section">
+                <h3 class="edu-subtitle">📚 Bibliografia Recomendada</h3>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Obras acadêmicas e literárias que abordam com seriedade as religiões afro-brasileiras</p>
+                
+                <div class="grid-educational">
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fas fa-book"></i> "A Pomba-gira e a Quimbanda"</h4>
+                        <p><strong>Autor:</strong> Reginaldo Prandi</p>
+                        <p>Um estudo antropológico detalhado sobre a figura da Pomba-gira dentro do contexto da Quimbanda e Umbanda, baseado em extensa pesquisa de campo.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fas fa-book"></i> "Candomblés da Bahia</h4>
+                        <p><strong>Autor:</strong> Edison Carneiro</p>
+                        <p>Uma obra clássica que documenta as tradições afro-brasileiras na Bahia, incluindo aspectos relacionados às entidades e suas manifestações.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fas fa-book"></i> "O Mundo Mágico Religioso do Candomblé"</h4>
+                        <p><strong>Autora:</strong> Monique Augras</p>
+                        <p>Análise antropológica sobre a cosmologia, rituais e entidades das religiões afro-brasileiras, com enfoque nos aspectos simbólicos e sociais.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fas fa-book"></i> "Exu: O Guardião da Casa do Futuro"</h4>
+                        <p><strong>Autora:</strong> Liana Leão</p>
+                        <p>Aborda a figura de Exu e suas relações com as Pomba-giras, desmistificando concepções errôneas sobre essas entidades.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fas fa-book"></i> "A Religiosidade dos Orixás"</h4>
+                        <p><strong>Autor:</strong> Pierre Fatumbi Verger</p>
+                        <p>Obra fundamental do famoso fotógrafo e pesquisador que documentou extensamente as tradições religiosas afro-brasileiras e suas origens africanas.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fas fa-book"></i> "Umbanda: Uma Religião Brasileira"</h4>
+                        <p><strong>Autor:</strong> Diana Brown</p>
+                        <p>Estudo antropológico que analisa a Umbanda como uma religião genuinamente brasileira, com suas características próprias e sincretismos.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div id="videos" class="edu-content-section">
+                <h3 class="edu-subtitle">🎬 Documentários e Entrevistas</h3>
+                <p style="text-align: center; margin-bottom: 2rem; opacity: 0.8;">Conteúdo audiovisual sério que aborda as religiões afro-brasileiras com respeito e profundidade</p>
+                
+                <div class="grid-educational">
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fab fa-youtube"></i> "Pomba-gira: A Força Feminina na Umbanda"</h4>
+                        <p><strong>Fonte:</strong> TV Brasil - Documentários</p>
+                        <p>Documentário que explora a figura da Pomba-gira como representação da força feminina, quebra de tabus e empoderamento dentro do contexto religioso.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fab fa-youtube"></i> Entrevista com Mãe Stella de Oxóssi</h4>
+                        <p><strong>Fonte:</strong> Canal Futura</p>
+                        <p>Entrevista histórica com uma das mais importantes sacerdotisas do Candomblé brasileiro, abordando diversos aspectos das tradições afro-brasileiras.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fab fa-youtube"></i> "A Umbanda Explicada" - Série</h4>
+                        <p><strong>Fonte:</strong> Universidade Federal (Projeto de Extensão)</p>
+                        <p>Série educativa que explica os fundamentos da Umbanda, suas entidades, rituais e filosofia de forma didática e acessível.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fab fa-youtube"></i> "Candomblé: A Religião dos Orixás"</h4>
+                        <p><strong>Fonte:</strong> TV Cultura</p>
+                        <p>Documentário abrangente sobre o Candomblé, suas origens, rituais e importância cultural e histórica no Brasil.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fab fa-youtube"></i> Entrevista com Pai Paulo de Oxalá</h4>
+                        <p><strong>Fonte:</strong> Programa Roda Viva</p>
+                        <p>Entrevista profunda com um renomado sacerdote sobre os desafios e perspectivas das religiões afro-brasileiras na contemporaneidade.</p>
+                    </div>
+                    
+                    <div class="edu-card">
+                        <h4 class="edu-card-title"><i class="fab fa-youtube"></i> "Quimbanda: Desmistificando Preconceitos"</h4>
+                        <p><strong>Fonte:</strong> Projeto Diálogos Interreligiosos</p>
+                        <p>Documentário que busca desconstruir os preconceitos em torno da Quimbanda, explicando seus fundamentos e diferenças em relação a outras tradições.</p>
+                    </div>
+                </div>
+                
+                <div class="warning-box">
+                    <h4 class="warning-title"><i class="fas fa-exclamation-triangle"></i> Atenção</h4>
+                    <p>Recomendamos buscar conteúdo produzido por instituições educacionais, veículos públicos de comunicação ou especialistas reconhecidos. Evite materiais sensacionalistas ou que reforcem estereótipos prejudiciais às religiões afro-brasileiras.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- PORTFOLIO -->
+        <section id="portfolio">
+            <h2 class="section-title">Mystici Opera Omnia</h2>
+            <p class="section-subtitle">Digital portals that connect the sacred feminine, the power of the Pombagiras, and the trans journey to the spiritual universe.</p>
+            
+            <div class="grid-modern">
+                <!-- POMBAGIRAS -->
+                <div class="card-modern featured-card">
+                    <span class="card-icon">👑</span>
+                    <h3>Universo das Pombagiras</h3>
+                    <ul>
+                        <li><a href="https://alexialuzdeferro.github.io/Hub-Pombagiras/" target="_blank">Hub Pombagiras - Portal Central</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/pombagira-revelada/" target="_blank">Pombagira Revelada</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/12rainhas-pombagiras/" target="_blank">12 Rainhas Pombagiras</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/almasdepombagira/" target="_blank">Almas de Pombagira</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/minha-pombagira/" target="_blank">Minha Pombagira</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/grimorio-das-pombagiras/" target="_blank">Grimório das Pombagiras</a></li>
+                    </ul>
+                </div>
+
+                <!-- ORÁCULOS -->
+                <div class="card-modern">
+                    <span class="card-icon">🔮</span>
+                    <h3>Oráculos & Giras</h3>
+                    <ul>
+                        <li><a href="https://alexialuzdeferro.github.io/12-oraculo/" target="_blank">12 Oráculo</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/oraculo-pombagiras/" target="_blank">Oráculo Pombagiras</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/gira-completa/" target="_blank">Gira Completa</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/giras/" target="_blank">Giras Espirituais</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/misterio-das-giras/" target="_blank">Mistério das Giras</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/-Soundboard-Pombagiras-/" target="_blank">Soundboard Pombagiras</a></li>
+                    </ul>
+                </div>
+
+                <!-- MEDITAÇÃO -->
+                <div class="card-modern">
+                    <span class="card-icon">🧘‍♀️</span>
+                    <h3>Meditação & Paz Interior</h3>
+                    <ul>
+                        <li><a href="https://alexialuzdeferro.github.io/paz/" target="_blank">Paz</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/paz_interior/" target="_blank">Paz Interior</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/relaxamento/" target="_blank">Relaxamento</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/medita-o/" target="_blank">Meditação</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/Velas-Virtuais/" target="_blank">Velas Virtuais</a></li>
+                    </ul>
+                </div>
+
+                <!-- IDENTIDADE -->
+                <div class="card-modern">
+                    <span class="card-icon">🌹</span>
+                    <h3>Identidade & Cartões</h3>
+                    <ul>
+                        <li><a href="https://alexialuzdeferro.github.io/alexia-melusine/" target="_blank">Alexia Melusine</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/melusine/" target="_blank">Melusine</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/card-photos/" target="_blank">Card Photos</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/card_visit/" target="_blank">Cartão de Visita</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/melusine-card/" target="_blank">Melusine Card</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/Business-Card/" target="_blank">Business Card</a></li>
+                    </ul>
+                </div>
+
+                <!-- MÚSICA GÓTICA -->
+                <div class="card-modern">
+                    <span class="card-icon">🎵</span>
+                    <h3>Música Gótica & Sombras</h3>
+                    <ul>
+                        <li><a href="https://alexialuzdeferro.github.io/dark-melancholy/" target="_blank">Dark Melancholy</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/tv-cyber-goth/" target="_blank">TV Cyber Goth</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/vampire-waves/" target="_blank">Vampire Waves</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/dark-tv/" target="_blank">Dark TV</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/dark-music/" target="_blank">Dark Music</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/PONTOS-CANTADOS/" target="_blank">Pontos Cantados</a></li>
+                    </ul>
+                </div>
+
+                <!-- HUBS CENTRAIS -->
+                <div class="card-modern">
+                    <span class="card-icon">🌐</span>
+                    <h3>Hubs & Portais</h3>
+                    <ul>
+                        <li><a href="https://alexialuzdeferro.github.io/super-hub-central/" target="_blank">Super Hub Central</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/Hub-Central-Pombagiras/" target="_blank">Hub Central Pombagiras</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/social-hub/" target="_blank">Social Hub</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/melusine_redes/" target="_blank">Melusine Redes</a></li>
+                        <li><a href="https://alexialuzdeferro.github.io/redes_sociais/" target="_blank">Redes Sociais</a></li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTATO -->
+        <section id="contato" style="background: rgba(107,15,143,0.2);">
+            <h2 class="section-title">Connect to Fire & Light</h2>
+            <p class="section-subtitle">"⚠️ Qui in quadriviis igne ludunt, comburuntur. Qui Pombagiras venerantur, protectionem et transformationem accipiunt. Cum reverentia intrate aut omnino non intrate. 🔥"</p>
+            
+            <div class="social-links">
+                <a href="https://www.youtube.com/@almasdepombagira" target="_blank"><i class="fab fa-youtube"></i></a>
+                <a href="https://www.threads.net/@almasdepombagira" target="_blank"><i class="fab fa-threads"></i></a>
+                <a href="https://www.instagram.com/almasdepombagira/" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ" target="_blank"><i class="fab fa-spotify"></i></a>
+                <a href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR/" target="_blank"><i class="fab fa-tiktok"></i></a>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer>
+            <p style="font-size: 1.2rem; margin-bottom: 1rem;">✦ Alexia Melusine ✦</p>
+            <p style="opacity: 0.7;">Rosa de Fogo • Luz de Ferro • Alma Fluida </p>
+            <!-- Adição do Contador Discreto no Rodapé -->
+            <div style="margin-top: 15px; font-size: 9px; letter-spacing: 5px; text-transform: uppercase; opacity: 0.5;">
+                O Olho que tudo vê registrou <span id="contagem-visceral">...</span> almas mundo afora.
+            </div>
+            <p style="margin-top: 2rem; opacity: 0.5;">ALL RIGHTS RESERVED © 2026 | 2029 | @almasdepombagira </p>
+        </footer>
+    </div>
+
+    <!-- FONT AWESOME ATUALIZADO (v6.7.2 com suporte a Threads) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+
+    <script>
+        // ========== FUNÇÕES PARA O PORTAL EDUCATIVO ==========
+        
+        // Navegação entre seções educativas
+        document.querySelectorAll('.edu-nav-item').forEach(item => {
+            item.addEventListener('click', function() {
+                // Remove classe active de todos os itens de navegação
+                document.querySelectorAll('.edu-nav-item').forEach(nav => {
+                    nav.classList.remove('active');
+                });
+                
+                // Adiciona classe active ao item clicado
+                this.classList.add('active');
+                
+                // Oculta todas as seções
+                document.querySelectorAll('.edu-content-section').forEach(section => {
+                    section.classList.remove('active');
+                });
+                
+                // Mostra a seção correspondente
+                const targetId = this.getAttribute('data-target');
+                document.getElementById(targetId).classList.add('active');
+                
+                // Scroll suave para a seção
+                window.scrollTo({
+                    top: document.getElementById('educativo').offsetTop - 80,
+                    behavior: 'smooth'
+                });
+            });
+        });
+        
+        // FAQ toggle
+        document.querySelectorAll('.faq-item-alexia').forEach(item => {
+            item.addEventListener('click', function() {
+                // Fecha todos os outros itens FAQ
+                document.querySelectorAll('.faq-item-alexia').forEach(faq => {
+                    if (faq !== this) {
+                        faq.classList.remove('active');
+                    }
+                });
+                
+                // Alterna o item clicado
+                this.classList.toggle('active');
+            });
+        });
+
+        // ========== INICIALIZAÇÃO GERAL ==========
+        document.addEventListener('DOMContentLoaded', () => {
+            // Inicializar primeira FAQ aberta
+            document.querySelector('.faq-item-alexia').classList.add('active');
+            
+            // Animação de scroll suave para links internos
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    
+                    const targetId = this.getAttribute('href');
+                    if (targetId === '#') return;
+                    
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+
+        // ========== ADIÇÃO: LÓGICA DO CONTADOR SUPABASE ==========
+        const _URL = 'https://rbygxkbewzknvjjhxdvw.supabase.co';
+        const _KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InJieWd4a2Jld3prbnZqamh4ZHZ3Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NjYwMDcxNjQsImV4cCI6MjA4MTU4MzE2NH0.YrHF9HEGo6yv9MyNsPzFgBhaAB1DRh2SLU8f7L6s1nY';
+        const _supabase = supabase.createClient(_URL, _KEY);
+
+        async function atualizarPortalVisceral() {
+            try {
+                // 1. Incrementa o acesso mundial no banco
+                await _supabase.rpc('increment_visceral_view', { target_page: 'pombagiras.com' });
+
+                // 2. Busca o valor total para exibir no rodapé
+                const { data, error } = await _supabase
+                    .from('access_stats')
+                    .select('view_count')
+                    .eq('page_name', 'pombagiras.com')
+                    .single();
+
+                if (data) {
+                    document.getElementById('contagem-visceral').innerText = data.view_count;
+                }
+            } catch (e) {
+                console.log("O olho observa em silêncio.");
+            }
+        }
+
+        // Dispara a função assim que carregar o portal
+        window.addEventListener('load', atualizarPortalVisceral);
+    </script>
+</body>
+</html>
