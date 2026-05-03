@@ -99,7 +99,8 @@
             display: grid;
             grid-template-columns: repeat(3, 1fr);
             gap: 0;
-            opacity: 1;
+            opacity: 0.15;
+            filter: grayscale(30%);
         }
         
         .hero-images img {
@@ -107,17 +108,14 @@
             height: 100%;
             object-fit: cover;
             animation: imagePulse 8s ease-in-out infinite;
+            
             filter: grayscale(100%);
-            opacity: 0.4;
-            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
-            will-change: filter, opacity;
+            transition: filter 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+            will-change: filter;
         }
         
         .hero-images img:hover {
             filter: grayscale(0%);
-            opacity: 1;
-            transform: scale(1.02);
-            z-index: 2;
         }
         
         .hero-images img:nth-child(1) { animation-delay: 0s; }
@@ -125,8 +123,8 @@
         .hero-images img:nth-child(3) { animation-delay: 4s; }
         
         @keyframes imagePulse {
-            0%, 100% { transform: scale(1); }
-            50% { transform: scale(1.02); }
+            0%, 100% { opacity: 0.3; transform: scale(1); }
+            50% { opacity: 0.6; transform: scale(1.05); }
         }
         
         .hero-content {
@@ -697,7 +695,7 @@
                 <div class="cta-container">
                      <a href="#educativo" class="cta-btn cta-secondary">Sacred Knowledge</a>
                     <a href="#portfolio" class="cta-btn cta-primary">Explore My Mystic Universe</a>
-                    <a href="https://pombagiras.com/guardias/" class="cta-btn cta-secondary">Guardians</a>
+                   <a href="https://pombagiras.com/guardias/" class="cta-btn cta-secondary">Guardians</a>
                 </div>
             </div>
         </section>
@@ -710,8 +708,8 @@
                     <p>I am Alexia Melusine, a fluid soul that moves between worlds, carrying the ancestral strength of the Pombagiras and the transformative light of trans identity.</p>
                     <p>My work combines spirituality, art, technology, and activism. I create digital portals that connect people to the wisdom of crossroads, the beauty of nonconformity, and the power of authenticity.</p>
                     <div class="identity-tags">
-                        
-                 </div>
+                       
+                    </div>
                 </div>
                 <div style="text-align: center;">
                     <img src="https://raw.githubusercontent.com/pombagiras/melusine-oficial/refs/heads/main/Ale%20Ultra%20(1).png" style="max-width: 100%; border-radius: 24px; box-shadow: 0 20px 60px rgba(255,0,110,0.4);" alt="Alexia">
@@ -726,11 +724,11 @@
             
             <!-- Navegação por abas -->
             <div class="edu-nav">
-                <div class="edu-nav-item active" data-target="glossario">📖 Glossário Sagrado</div>
-                <div class="edu-nav-item" data-target="curiosidades">✨ Curiosidades</div>
-                <div class="edu-nav-item" data-target="faq">❓ Perguntas Frequentes</div>
-                <div class="edu-nav-item" data-target="bibliografia">📚 Bibliografia</div>
-                <div class="edu-nav-item" data-target="videos">🎬 Documentários</div>
+                <div class="edu-nav-item active" data-target="glossario"><i class="fa-solid fa-money-check"></i>Glossário Sagrado</div>
+                <div class="edu-nav-item" data-target="curiosidades"><i class="fa-solid fa-ranking-star"></i> Curiosidades</div>
+                <div class="edu-nav-item" data-target="faq"><i class="fa-solid fa-question"></i> Perguntas Frequentes</div>
+                <div class="edu-nav-item" data-target="bibliografia"><i class="fa-solid fa-address-card"></i>Bibliografia</div>
+                <div class="edu-nav-item" data-target="videos"><i class="fa-solid fa-square-poll-horizontal"></i>Documentários</div>
             </div>
             
             <!-- Seção Glossário AMPLIADO -->
@@ -1178,7 +1176,8 @@
             <div class="grid-modern">
                 <!-- POMBAGIRAS -->
                 <div class="card-modern featured-card">
-                    <span class="card-icon">👑</span>
+                    
+                    <i class="fa-solid fa-skull-crossbones"></i>
                     <h3>Universo das Pombagiras</h3>
                     <ul>
                         <li><a href="https://alexialuzdeferro.github.io/Hub-Pombagiras/" target="_blank">Hub Pombagiras - Portal Central</a></li>
@@ -1192,7 +1191,8 @@
 
                 <!-- ORÁCULOS -->
                 <div class="card-modern">
-                    <span class="card-icon">🔮</span>
+                    
+                    <i class="fa-solid fa-hands-praying"></i>
                     <h3>Oráculos & Giras</h3>
                     <ul>
                         <li><a href="https://alexialuzdeferro.github.io/12-oraculo/" target="_blank">12 Oráculo</a></li>
@@ -1206,8 +1206,8 @@
 
                 <!-- MEDITAÇÃO -->
                 <div class="card-modern">
-                    
-                    <i class="fa-solid fa-users-viewfinder"></i>
+                  
+                    <i class="fa-solid fa-libra"></i>
                     <h3>Meditação & Paz Interior</h3>
                     <ul>
                         <li><a href="https://alexialuzdeferro.github.io/paz/" target="_blank">Paz</a></li>
@@ -1220,7 +1220,8 @@
 
                 <!-- IDENTIDADE -->
                 <div class="card-modern">
-                    <span class="card-icon">🌹</span>
+                    
+                    <i class="fa-solid fa-photo-film"></i>
                     <h3>Identidade & Cartões</h3>
                     <ul>
                         <li><a href="https://alexialuzdeferro.github.io/alexia-melusine/" target="_blank">Alexia Melusine</a></li>
@@ -1234,7 +1235,8 @@
 
                 <!-- MÚSICA GÓTICA -->
                 <div class="card-modern">
-                    <span class="card-icon">🎵</span>
+                   
+                    <i class="fa-solid fa-headphones"></i>
                     <h3>Música Gótica & Sombras</h3>
                     <ul>
                         <li><a href="https://alexialuzdeferro.github.io/dark-melancholy/" target="_blank">Dark Melancholy</a></li>
@@ -1248,7 +1250,7 @@
 
                 <!-- HUBS CENTRAIS -->
                 <div class="card-modern">
-                    <span class="card-icon">🌐</span>
+                    <i class="fa-solid fa-wifi"></i>
                     <h3>Hubs & Portais</h3>
                     <ul>
                         <li><a href="https://alexialuzdeferro.github.io/super-hub-central/" target="_blank">Super Hub Central</a></li>
@@ -1264,14 +1266,16 @@
         <!-- CONTATO -->
         <section id="contato" style="background: rgba(107,15,143,0.2);">
             <h2 class="section-title">Connect to Fire & Light</h2>
-            <p class="section-subtitle">"⚠️ Qui in quadriviis igne ludunt, comburuntur. Qui Pombagiras venerantur, protectionem et transformationem accipiunt. Cum reverentia intrate aut omnino non intrate. 🔥"</p>
+            <p class="section-subtitle">"<i class="fa-solid fa-triangle-exclamation"></i> Qui in quadriviis igne ludunt, comburuntur. Qui Pombagiras venerantur, protectionem et transformationem accipiunt. Cum reverentia intrate aut omnino non intrate."</p>
             
             <div class="social-links">
                 <a href="https://www.youtube.com/@almasdepombagira" target="_blank"><i class="fab fa-youtube"></i></a>
-                <a href="https://www.threads.net/@almasdepombagira" target="_blank"><i class="fab fa-threads"></i></a>
                 <a href="https://www.instagram.com/almasdepombagira/" target="_blank"><i class="fab fa-instagram"></i></a>
                 <a href="https://open.spotify.com/show/0oeCL1QScD3v7dHeUvJjgJ" target="_blank"><i class="fab fa-spotify"></i></a>
                 <a href="https://www.tiktok.com/@almasdepombagira?lang=pt-BR/" target="_blank"><i class="fab fa-tiktok"></i></a>
+                <a href="https://discord.gg/gWZP8R7Dqu" target="_blank"><i class="fab fa-discord"></i></a>
+                <a href="https://t.me/pomba_giras" target="_blank"><i class="fab fa-telegram"></i></a>
+                <a href="https://whatsapp.com/channel/0029VbBs2AnJkK7J9J0nLr2G" target="_blank"><i class="fab fa-whatsapp"></i></a>
             </div>
         </section>
 
@@ -1287,8 +1291,8 @@
         </footer>
     </div>
 
-    <!-- FONT AWESOME ATUALIZADO (v6.7.2 com suporte a Threads) -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <!-- FONT AWESOME (para ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <script>
         // ========== FUNÇÕES PARA O PORTAL EDUCATIVO ==========
